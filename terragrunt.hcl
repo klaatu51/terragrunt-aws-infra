@@ -20,7 +20,7 @@ remote_state {
   backend = "s3"
   config = {
     encrypt        = true
-    bucket         = "${local.env_vars.locals.env}-terragrunt-tettaform-state"
+    bucket         = "${local.env_vars.locals.env}-terragrunt-terraform-state"
     key            = "${path_relative_to_include()}/terraform.tfstate"
     region         = "${local.aws_region}"
   }
