@@ -29,3 +29,8 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
 }
+
+inputs = merge(
+  local.region_vars.locals,
+  local.environment_vars.locals,
+)
