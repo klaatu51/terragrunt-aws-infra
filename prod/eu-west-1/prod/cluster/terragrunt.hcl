@@ -13,7 +13,8 @@ inputs = {
 
   cluster_version = "1.21"
 
-  instance_type        = "t3a.small"
-  asg_desired_capacity = 2
-  asg_max_size         = 2
+  instance_type = "t3a.small"
+  min_size      = 1
+  max_size      = 1
+  desired_size  = 1
 }
