@@ -1,5 +1,5 @@
 terraform {
-  source = "${local.source_base_url}?ref=v0.3.1"
+  source = "${local.source_base_url}?ref=v0.2.1"
 }
 
 locals {
@@ -17,8 +17,17 @@ inputs = {
 
   cluster_version = "1.21"
 
-  instance_type = "t3a.small"
-  min_size      = 1
-  max_size      = 1
-  desired_size  = 1
+  instance_type        = "t3a.small"
+  asg_desired_capacity = 1
+  asg_max_size         = 1
+
+  map_users = [
+    {
+      userarn = "arn:aws:iam::145157870759:user/liam.mctague"
+      username = "liam.mctague"
+      groups   = [
+        "system:masters"
+      ]
+    }
+  ]
 }
